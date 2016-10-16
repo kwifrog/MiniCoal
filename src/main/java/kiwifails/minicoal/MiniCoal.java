@@ -1,9 +1,7 @@
 package kiwifails.minicoal;
 
-import kiwifails.minicoal.tab.CreativeTab;
-import net.minecraft.creativetab.CreativeTabs;
+import kiwifails.minicoal.items.ModItems;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -22,22 +20,20 @@ public class MiniCoal {
     @Mod.Instance
     public static MiniCoal instance;
 
-    public static CreativeTab tabMiniCoal;
-
-    @EventHandler
+    @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
 
         proxy.preInit(event);
         System.out.println(NAME + " is loading!");
-        tabMiniCoal = new CreativeTab(CreativeTabs.getNextID(), "mini_coal");
+        ModItems.init();
     }
-    @EventHandler
+    @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
 
         proxy.init(event);
 
     }
-    @EventHandler
+    @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
 
         proxy.postInit(event);
