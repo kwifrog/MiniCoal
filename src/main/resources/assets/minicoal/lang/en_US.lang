@@ -1,4 +1,3 @@
-#Creative Tab
-itemGroup.mini_coal=MiniCoal
-
 #Items
+item.miniCoal.name=Mini Coal
+item.miniCharcoal.name=Mini Charcoal

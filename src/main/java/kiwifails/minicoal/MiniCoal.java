@@ -1,6 +1,8 @@
 package kiwifails.minicoal;
 
+import kiwifails.minicoal.items.ItemFuel;
 import kiwifails.minicoal.items.ModItems;
+import kiwifails.minicoal.items.ModRecipes;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -31,6 +33,8 @@ public class MiniCoal {
     public void init(FMLInitializationEvent event) {
 
         proxy.init(event);
+        ModRecipes.init();
+        ItemFuel.init();
 
     }
     @Mod.EventHandler
