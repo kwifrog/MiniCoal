@@ -1,5 +1,6 @@
 package kiwifails.minicoal;
 
+import kiwifails.minicoal.config.Config;
 import kiwifails.minicoal.items.ItemFuel;
 import kiwifails.minicoal.items.ModItems;
 import kiwifails.minicoal.items.ModRecipes;
@@ -9,6 +10,8 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import kiwifails.minicoal.proxy.CommonProxy;
+
+import java.io.File;
 
 @Mod(modid = MiniCoal.MODID, version = MiniCoal.VERSION, name = MiniCoal.NAME)
 public class MiniCoal {
@@ -22,11 +25,14 @@ public class MiniCoal {
     @Mod.Instance
     public static MiniCoal instance;
 
+    public static Config config;
+
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
 
+        String path = event.getSuggestedConfigurationFile().getAbsolutePath().replace(MiniCoal.MODID, "MiniCoal");
+        config = Config.initialize(new File(path));
         proxy.preInit(event);
-        System.out.println(NAME + " is loading!");
         ModItems.init();
     }
     @Mod.EventHandler
