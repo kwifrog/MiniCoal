@@ -1,7 +1,7 @@
 package kiwifails.minicoal;
 
 import kiwifails.minicoal.config.Config;
-import kiwifails.minicoal.items.ItemFuel;
+import kiwifails.minicoal.handler.FuelHandler;
 import kiwifails.minicoal.items.ModItems;
 import kiwifails.minicoal.items.ModRecipes;
 import net.minecraftforge.fml.common.Mod;
@@ -10,6 +10,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import kiwifails.minicoal.proxy.CommonProxy;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import java.io.File;
 
@@ -40,7 +41,7 @@ public class MiniCoal {
 
         proxy.init(event);
         ModRecipes.init();
-        ItemFuel.init();
+        GameRegistry.registerFuelHandler(new FuelHandler());
 
     }
     @Mod.EventHandler
