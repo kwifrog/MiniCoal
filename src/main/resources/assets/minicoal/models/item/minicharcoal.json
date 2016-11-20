@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "minicoal:item/miniCoal"
+    "layer0": "minicoal:item/mini_charcoal"
   }
 }

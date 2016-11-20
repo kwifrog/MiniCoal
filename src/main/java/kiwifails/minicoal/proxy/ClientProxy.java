@@ -1,5 +1,6 @@
 package kiwifails.minicoal.proxy;
 
+import com.sun.istack.internal.NotNull;
 import kiwifails.minicoal.MiniCoal;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;

@@ -8,16 +8,16 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ModItems {
 
-    public static ItemBase miniCoal;
-    public static ItemBase miniCharcoal;
+    public static ItemBase minicoal;
+    public static ItemBase minicharcoal;
 
     public static void init() {
 
         if(!Config.disableMiniCoal)
-        miniCoal = register(new ItemOre("miniCoal", "miniCoal").setCreativeTab(CreativeTabs.MATERIALS));
+        minicoal = register(new ItemOre("minicoal", "minicoal").setCreativeTab(CreativeTabs.MATERIALS));
 
         if(!Config.disableMiniCharcoal)
-        miniCharcoal = register(new ItemOre("miniCharcoal", "miniCharcoal").setCreativeTab(CreativeTabs.MATERIALS));
+        minicharcoal = register(new ItemOre("minicharcoal", "minicharcoal").setCreativeTab(CreativeTabs.MATERIALS));
     }
 
     private static <T extends Item> T register(T item) {
