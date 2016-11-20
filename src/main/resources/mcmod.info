@@ -6,11 +6,7 @@
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "https://www.twitch.tv/kiwifails",
-  "updateUrl": "",
   "authorList": ["KiwiFails"],
   "credits": "My Sanity",
-  "logoFile": "",
-  "screenshots": [],
-  "dependencies": []
 }
 ]
