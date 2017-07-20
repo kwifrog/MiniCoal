@@ -1,10 +1,11 @@
 package kiwifails.minicoal.proxy;
 
-import com.sun.istack.internal.NotNull;
 import kiwifails.minicoal.MiniCoal;
+import kiwifails.minicoal.items.ModItems;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ItemModelMesher;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
-import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -14,7 +15,11 @@ public class ClientProxy extends CommonProxy {
 
     @Override
     public void registerItemRenderer(Item item, int meta, String id) {
-        ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(MiniCoal.MODID + ":" + id, "inventory"));
+        //ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(MiniCoal.MODID + ":" + id, "inventory"));
+    	ItemModelMesher mesher = Minecraft.getMinecraft().getRenderItem().getItemModelMesher();
+		ModelResourceLocation modelRes = new ModelResourceLocation(MiniCoal.MODID + ":" + id,
+				"inventory");
+		mesher.register(item, meta, modelRes);
     }
 
     @Override
@@ -24,7 +29,7 @@ public class ClientProxy extends CommonProxy {
 
     @Override
     public void init(FMLInitializationEvent event) {
-
+    	ModItems.init();
     }
 
     @Override
