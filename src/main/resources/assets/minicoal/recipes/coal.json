@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "xxx",
+    "x x",
+    "xxx"
+  ],
+  "key": {
+    "x": {
+      "item": "minicoal:minicoal"
+    }
+  },
+  "result": {
+    "item": "minecraft:coal",
+    "data": 0
+  }
+}

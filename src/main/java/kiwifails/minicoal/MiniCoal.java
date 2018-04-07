@@ -3,13 +3,13 @@ package kiwifails.minicoal;
 import kiwifails.minicoal.config.Config;
 import kiwifails.minicoal.handler.FuelHandler;
 import kiwifails.minicoal.items.ModItems;
-import kiwifails.minicoal.items.ModRecipes;
+import kiwifails.minicoal.proxy.CommonProxy;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import kiwifails.minicoal.proxy.CommonProxy;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import java.io.File;
@@ -33,22 +33,29 @@ public class MiniCoal {
 
         String path = event.getSuggestedConfigurationFile().getAbsolutePath().replace(MiniCoal.MODID, "MiniCoal");
         config = Config.initialize(new File(path));
-        ModItems.init();
         proxy.preInit(event);
+        registerEventHandler(new ModItems());
 
     }
+
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
 
         proxy.init(event);
-        ModRecipes.init();
         GameRegistry.registerFuelHandler(new FuelHandler());
 
     }
+
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
 
         proxy.postInit(event);
+
+    }
+
+    public void registerEventHandler(Object handler) {
+
+        MinecraftForge.EVENT_BUS.register(handler);
 
     }
 }
