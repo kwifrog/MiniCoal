@@ -1,2 +1,2 @@
 # MiniCoal
-Tiny Coal and Charcoal
+Mini Coal and Charcoal
