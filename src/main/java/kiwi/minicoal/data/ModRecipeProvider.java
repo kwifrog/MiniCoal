@@ -27,7 +27,6 @@ public class ModRecipeProvider extends RecipeProvider {
         ShapelessRecipeBuilder.shapeless(ModItems.MINI_COAL.get(), 8)
                 .requires(Items.COAL)
                 .unlockedBy("has_coal", has(Items.COAL))
-                .unlockedBy("has_mini_coal", has(ModItems.MINI_COAL.get()))
                 .group("minicoal")
                 .save(consumer);
         ShapelessRecipeBuilder.shapeless(ModItems.MINI_CHARCOAL.get(), 8)
@@ -36,17 +35,15 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_mini_charcoal", has(ModItems.MINI_CHARCOAL.get()))
                 .group("minicoal")
                 .save(consumer);
-        ShapedRecipeBuilder.shaped(Items.COAL)
-                .define('#', ModItems.MINI_COAL.get())
-                .pattern("###").pattern("###").pattern("## ")
+        ShapelessRecipeBuilder.shapeless(Items.COAL)
+                .requires(ModItems.MINI_COAL.get(), 8)
                 .unlockedBy("has_mini_coal", has(ModItems.MINI_COAL.get()))
                 .group("minicoal")
-                .save(consumer);
-        ShapedRecipeBuilder.shaped(Items.CHARCOAL)
-                .define('#', ModItems.MINI_CHARCOAL.get())
-                .pattern("###").pattern("###").pattern("## ")
+                .save(consumer, "mini_coal_to_coal");
+        ShapelessRecipeBuilder.shapeless(Items.CHARCOAL)
+                .requires(ModItems.MINI_CHARCOAL.get(), 8)
                 .unlockedBy("has_mini_charcoal", has(ModItems.MINI_CHARCOAL.get()))
                 .group("minicoal")
-                .save(consumer);
+                .save(consumer, "mini_charcoal_to_charcoal");
     }
 }
