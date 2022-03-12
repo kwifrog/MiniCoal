@@ -5,7 +5,7 @@ issueTrackerURL="https://github.com/KiwiOfLesbos/MiniCoal/issues"
 
 [[mods]]
 modId="minicoal"
-version="1.18.1-1.0.0"
+version="1.18.2-1.0.0"
 displayName="MiniCoal"
 logoFile=""
 logoBlue=false
