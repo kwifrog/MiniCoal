@@ -1,11 +1,11 @@
 modLoader="javafml"
-loaderVersion="[39,)"
+loaderVersion="[41,)"
 license="GPL-3.0 License"
 issueTrackerURL="https://github.com/KiwiOfLesbos/MiniCoal/issues"
 
 [[mods]]
 modId="minicoal"
-version="1.18.2-1.0.0"
+version="1.19-1.0.0"
 displayName="MiniCoal"
 logoFile=""
 logoBlue=false
@@ -16,13 +16,13 @@ description="Mini Coal & Charcoal"
 [[dependencies.minicoal]]
     modId="forge"
     mandatory=true
-    versionRange="[39,)"
+    versionRange="[41,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.minicoal]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.18.1,1.19)"
+    versionRange="[1.19,1.20)"
     ordering="NONE"
     side="BOTH"

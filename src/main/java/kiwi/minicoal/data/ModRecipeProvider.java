@@ -1,3 +1,4 @@
+/*
 package kiwi.minicoal.data;
 
 import kiwi.minicoal.MiniCoal;
@@ -47,3 +48,4 @@ public class ModRecipeProvider extends RecipeProvider {
                 .save(consumer, "mini_charcoal_to_charcoal");
     }
 }
+*/

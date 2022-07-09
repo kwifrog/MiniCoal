@@ -1,3 +1,4 @@
+/*
 package kiwi.minicoal.data;
 
 import kiwi.minicoal.MiniCoal;
@@ -24,3 +25,4 @@ public class ModItemModelProvider extends ItemModelProvider {
         getBuilder(name).parent(itemGenerated).texture("layer0", "item/" + name);
     }
 }
+*/

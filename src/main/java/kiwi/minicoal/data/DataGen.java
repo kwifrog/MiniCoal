@@ -1,3 +1,6 @@
+// Technically I'll never need DataGen again, but will probably restore this at a later date.
+
+/*
 package kiwi.minicoal.data;
 
 import net.minecraft.data.DataGenerator;
@@ -23,3 +26,4 @@ public class DataGen {
         }
     }
 }
+*/
