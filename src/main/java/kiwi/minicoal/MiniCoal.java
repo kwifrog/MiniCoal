@@ -2,31 +2,35 @@ package kiwi.minicoal;
 
 import kiwi.minicoal.registry.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.CreativeModeTabEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
 @Mod(MiniCoal.MODID)
-@Mod.EventBusSubscriber(modid = MiniCoal.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
-public class MiniCoal {
-   public static final String MODID = "minicoal";
+public class MiniCoal
+{
+    public static final String MODID = "minicoal";
 
-   public MiniCoal() {
-      final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+    public MiniCoal(IEventBus modEventBus) {
+        ModItems.ITEMS.register(modEventBus);
 
-      ModItems.ITEMS.register(modEventBus);
+        modEventBus.addListener(this::addCreative);
 
-      MinecraftForge.EVENT_BUS.register(this);
+        NeoForge.EVENT_BUS.register(this);
+    }
 
-      modEventBus.addListener(this::addCreative);
-   }
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS)
+            event.accept(ModItems.MINI_COAL);
+            event.accept(ModItems.MINI_CHARCOAL);
+    }
 
-   private void addCreative(CreativeModeTabEvent.BuildContents event) {
-      if(event.getTab() == CreativeModeTabs.INGREDIENTS) {
-         event.accept(ModItems.MINI_COAL);
-         event.accept(ModItems.MINI_CHARCOAL);
-      }
-   }
+    @SubscribeEvent
+    public void onServerStarting(ServerStartingEvent event) {
+
+    }
+
 }

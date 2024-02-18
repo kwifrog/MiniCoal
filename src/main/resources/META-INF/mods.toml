@@ -1,28 +1,10 @@
 modLoader="javafml"
-loaderVersion="[44,)"
-license="GPL-3.0 License"
-issueTrackerURL="https://github.com/KiwiOfLesbos/MiniCoal/issues"
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
 
 [[mods]]
-modId="minicoal"
-version="1.19.3-1.0.0"
-displayName="MiniCoal"
-logoFile=""
-logoBlue=false
-credits="Thanks to all the snails in my backyard."
-authors="KiwiOfLesbos"
-description="Mini Coal & Charcoal"
-
-[[dependencies.minicoal]]
-    modId="forge"
-    mandatory=true
-    versionRange="[44,)"
-    ordering="NONE"
-    side="BOTH"
-
-[[dependencies.minicoal]]
-    modId="minecraft"
-    mandatory=true
-    versionRange="[1.19.3,1.20)"
-    ordering="NONE"
-    side="BOTH"
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
+authors="${mod_authors}"
+description='''${mod_description}'''
