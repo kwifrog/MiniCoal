@@ -3,7 +3,7 @@ package kiwi.minicoal;
 import kiwi.minicoal.registry.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.CreativeModeTabEvent;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -23,8 +23,8 @@ public class MiniCoal {
       modEventBus.addListener(this::addCreative);
    }
 
-   private void addCreative(CreativeModeTabEvent.BuildContents event) {
-      if(event.getTab() == CreativeModeTabs.INGREDIENTS) {
+   private void addCreative(BuildCreativeModeTabContentsEvent event) {
+      if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
          event.accept(ModItems.MINI_COAL);
          event.accept(ModItems.MINI_CHARCOAL);
       }
