@@ -2,6 +2,8 @@ package kiwi.minicoal;
 
 import kiwi.minicoal.registry.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.ItemLike;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
@@ -23,9 +25,10 @@ public class MiniCoal
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS)
-            event.accept(ModItems.MINI_COAL);
-            event.accept(ModItems.MINI_CHARCOAL);
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(new ItemStack((ItemLike) ModItems.MINI_COAL));
+            event.accept(new ItemStack((ItemLike) ModItems.MINI_CHARCOAL));
+        }
     }
 
     @SubscribeEvent
