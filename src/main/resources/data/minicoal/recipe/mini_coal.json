@@ -1,13 +1,13 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "group": "minicoal",
+  "category": "minicoal",
   "ingredients": [
     {
       "item": "minecraft:coal"
     }
   ],
   "result": {
-    "item": "minicoal:mini_coal",
+    "id": "minicoal:mini_coal",
     "count": 8
   }
 }
