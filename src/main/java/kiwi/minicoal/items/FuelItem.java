@@ -6,11 +6,11 @@ import net.minecraft.world.item.crafting.RecipeType;
 import org.jetbrains.annotations.Nullable;
 
 public class FuelItem extends Item {
-    public final int burnTime;
+    private int burnTime = 0;
 
-    public FuelItem(Properties properties) {
+    public FuelItem(Properties properties, int burnTime) {
         super(properties);
-        this.burnTime = 200;
+        this.burnTime = burnTime;
     }
 
     @Override
